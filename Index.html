@@ -5,162 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moto Repuestos</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        .hero-section {
-            background-image: url('./assets/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .products-section .product-card {
-            border-radius: 15px;
-            transition: transform 0.2s ease-in-out;
-        }
-        .products-section .product-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-        .currency-selector {
-            display: inline-block;
-            border: 1px solid rgb(204, 204, 204);
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }        
-        .currency-selector button {
-            background: none;
-            border: none;
-            color: inherit;
-            margin: 0 5px;
-        }
-        .currency-selector button.active {
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-gray-100">
-    <header class="bg-gray-900 text-white py-4 fixed w-full z-10">
+    <!-- Header -->
+    <header class="bg-gray-900 text-white py-4 fixed w-full z-10 border-b-4 border-red-500 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-bold">Moto Repuestos</h1>
-            </div>
-            <div class="flex items-center">
-                <div class="currency-selector">
-                    <button class="active" data-currency="ARS">ARS</button>
-                    <button data-currency="USD">USD</button>
-                    <button data-currency="EUR">EUR</button>
-                </div>
-            </div>
+            <h1 class="text-2xl font-bold">Moto Repuestos</h1>
         </div>
     </header>
-    <section class="hero-section">
-        <div class="container mx-auto text-white">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">Repuestos para tu Moto</h1>
-            <p class="text-lg md:text-xl mb-8">Encuentra la mejor calidad a precios competitivos.</p>
-            <a href="#products" class="btn btn-primary">Ver Productos</a>
+
+    <!-- Carousel Section -->
+    <section class="hero-section py-12">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://motos.honda.com.ar/uploads/modelos/21/images/colores/21c-0web-wave-2020-roja.jpg" alt="Promoción 1" class="w-full h-96 object-cover">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://www.pontgrup.com/wp-content/uploads/2021/08/partes-de-una-moto.jpg" alt="Promoción 2" class="w-full h-96 object-cover">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://motos.honda.com.co/images/blogs/Cuando-cambiar-el-aceite-de-la-moto.png" alt="Promoción 3" class="w-full h-96 object-cover">
+                </div>
+            </div>
+            <div class="swiper-button-prev text-red-500"></div>
+            <div class="swiper-button-next text-red-500"></div>
         </div>
     </section>
-    <section id="products" class="products-section py-12">
+
+    <!-- Offers Section -->
+    <section id="offers" class="products-section py-12 border-t-4 border-red-500">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-center">Nuestros Productos</h2>
+            <h2 class="text-3xl font-bold mb-8 text-center text-red-500">Ofertas Destacadas</h2>
             <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide product-card p-4 bg-white shadow-md">
-                        <img src="./assets/product-1.jpg" alt="Producto 1" class="w-full h-48 object-cover mb-4">
-                        <h3 class="text-xl font-bold mb-2">Filtro de Aceite</h3>
-                        <p class="text-gray-600 mb-2">Para Motos Yamaha</p>
-                        <span class="text-2xl font-bold" data-price-ars="1500" data-price-usd="10" data-price-eur="9">ARS 1500</span>
+                <div class="swiper-wrapper" id="offer-products">
+                    <!-- Product Cards -->
+                    <div class="swiper-slide product-card p-4">
+                        <img src="https://th.bing.com/th/id/OIP._5mFMExXdix1--RhofPH_QHaHa?w=212&h=212&c=7&r=0&o=5&pid=1.7" alt="Filtro de Aceite" class="w-full h-48 object-cover mb-4">
+                        <h3 class="text-xl font-bold mb-2 text-red-500">Filtro de Aceite</h3>
+                        <p class="text-gray-600 mb-2">Para Motos 110c - 150cc</p>
+                        <span class="text-2xl font-bold text-black">ARS 7500</span>
                     </div>
-                    <div class="swiper-slide product-card p-4 bg-white shadow-md">
-                        <img src="./assets/product-2.jpg" alt="Producto 2" class="w-full h-48 object-cover mb-4">
-                        <h3 class="text-xl font-bold mb-2">Cadena de Distribución</h3>
-                        <p class="text-gray-600 mb-2">Para Motos Honda</p>
-                        <span class="text-2xl font-bold" data-price-ars="3000" data-price-usd="20" data-price-eur="18">ARS 3000</span>
+                    <div class="swiper-slide product-card p-4">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_777843-MLA47175443397_082021-O.webp" alt="Filtro de Aceite" class="w-full h-48 object-cover mb-4">
+                        <h3 class="text-xl font-bold mb-2 text-red-500">Bocina 12v</h3>
+                        <p class="text-gray-600 mb-2">Para Motos 110c - 150cc</p>
+                        <span class="text-2xl font-bold text-black">ARS 4500</span>
                     </div>
-                    <div class="swiper-slide product-card p-4 bg-white shadow-md">
-                        <img src="./assets/product-3.jpg" alt="Producto 3" class="w-full h-48 object-cover mb-4">
-                        <h3 class="text-xl font-bold mb-2">Disco de Freno Delantero</h3>
-                        <p class="text-gray-600 mb-2">Para Motos Kawasaki</p>
-                        <span class="text-2xl font-bold" data-price-ars="2500" data-price-usd="15" data-price-eur="13">ARS 2500</span>
+                    <div class="swiper-slide product-card p-4">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_869547-MLA50890968283_072022-O.webp" alt="Filtro de Aceite" class="w-full h-48 object-cover mb-4">
+                        <h3 class="text-xl font-bold mb-2 text-red-500">Bateria Alpina 12v</h3>
+                        <p class="text-gray-600 mb-2">Para Motos 110c - 150cc</p>
+                        <span class="text-2xl font-bold text-black">ARS 31500</span>
                     </div>
-                    </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                    <div class="swiper-slide product-card p-4">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_972681-MLA79863247560_102024-O.webp" alt="Filtro de Aceite" class="w-full h-48 object-cover mb-4">
+                        <h3 class="text-xl font-bold mb-2 text-red-500">Cubierta 250-17</h3>
+                        <p class="text-gray-600 mb-2">Para Motos 110c - 150cc</p>
+                        <span class="text-2xl font-bold text-black">ARS 24500</span>
+                    </div>                                                            
+                    <!-- Repeat for other products -->
+                </div>
+                <div class="swiper-button-prev text-red-500"></div>
+                <div class="swiper-button-next text-red-500"></div>
             </div>
         </div>
     </section>
-    <section class="about-section py-12">
+
+    <!-- Contact Section -->
+    <section class="contact-section py-12 border-t-4 border-black">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-center">Acerca de Nosotros</h2>
-            <p class="text-gray-700 text-center">Somos una empresa dedicada a la venta de repuestos para motocicletas con amplia experiencia en el mercado.</p>
+            <h2 class="text-3xl font-bold mb-8 text-center text-red-500">Contáctanos</h2>
+            <div class="flex justify-center items-center">
+                <a href="https://facebook.com" target="_blank" class="text-red-500 mx-4">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="text-red-500 mx-4">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://maps.google.com" target="_blank" class="text-red-500 mx-4">
+                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                </a>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-4 mt-12">
         <div class="container mx-auto text-center">
-            <p>&copy; 2023 Moto Repuestos. Todos los derechos reservados.</p>
+            <p class="text-red-500">&copy; 2023 Moto Repuestos. Todos los derechos reservados.</p>
+            <p class="text-sm">* Los precios mostrados son aproximados.</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script>
-        const swiper = new Swiper('.swiper-container', {
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
-
-        const currencyButtons = document.querySelectorAll('.currency-selector button');
-        const productPrices = document.querySelectorAll('.products-section .product-card span');
-
-        function updatePrices(currency) {
-            productPrices.forEach(priceElement => {
-                const priceKey = `data-price-${currency.toLowerCase()}`;
-                const newPrice = priceElement.getAttribute(priceKey);
-                priceElement.textContent = `${currency} ${newPrice}`;
-            });
-        }
-
-        currencyButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                currencyButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                const selectedCurrency = button.getAttribute('data-currency');
-                updatePrices(selectedCurrency);
-            });
-        });
-
-        // ScrollReveal
-        ScrollReveal().reveal('.hero-section h1', { duration: 1000, origin: 'top', distance: '50px', delay: 500 });
-        ScrollReveal().reveal('.hero-section p', { duration: 1000, origin: 'top', distance: '50px', delay: 700 });
-        ScrollReveal().reveal('.hero-section a', { duration: 1000, origin: 'bottom', distance: '50px', delay: 900 });
-        ScrollReveal().reveal('.products-section', { duration: 1000, origin: 'bottom', distance: '50px', delay: 1000 });
-        ScrollReveal().reveal('.about-section', { duration: 1000, origin: 'bottom', distance: '50px', delay: 1200 });
-        ScrollReveal().reveal('.footer', { duration: 1000, origin: 'bottom', distance: '50px', delay: 1400 });  
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

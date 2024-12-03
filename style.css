@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('./assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 5px solid red;
+    box-shadow: 0 10px 15px rgba(255, 0, 0, 0.3);
+}
+
+/* Responsive grid layout for the offers section */
+#offers .swiper-wrapper {
+    display: grid;
+    gap: 16px; /* Space between cards */
+    justify-items: center;
+    align-items: center;
+}
+
+/* Grid settings for different screen sizes */
+@media (max-width: 768px) { /* Smartphone: 2 items per row */
+    #offers .swiper-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) { /* Notebook: 5 items per row */
+    #offers .swiper-wrapper {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 1025px) { /* Desktop: 10 items in two rows */
+    #offers .swiper-wrapper {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Style for product cards */
+#offers .product-card {
+    background-color: #5f0e0e;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* Hover effect: shadow and movement */
+#offers .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styles */
+#offers .product-card img {
+    border-bottom: 2px solid #f00; /* Red underline for the image */
+    border-radius: 10px 10px 0 0;
+}
+
+/* Product title */
+#offers .product-card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #f00; /* Red title */
+}
+
+/* Price styling */
+#offers .product-card span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Adjust buttons for the carousel */
+#offers .swiper-button-prev, 
+#offers .swiper-button-next {
+    color: #f00; /* Red color for buttons */
+    font-size: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+#offers .swiper-button-prev:hover, 
+#offers .swiper-button-next:hover {
+    transform: scale(1.2); /* Enlarge buttons on hover */
+}
+
+
+/* Product Cards */
+.products-section .product-card {
+    border-radius: 15px;
+    transition: transform 0.2s ease-in-out;
+    border: 2px solid red;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.products-section .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+}
+
+/* Contact Section Icons */
+.contact-section i {
+    color: red;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.contact-section i:hover {
+    transform: scale(1.2);
+    box-shadow: 0 5px 10px rgba(255, 0, 0, 0.4);
+}
+
+/* Footer */
+footer {
+    border-top: 5px solid red;
+    box-shadow: 0 -10px 15px rgba(255, 0, 0, 0.2);
+}
+footer p {
+    color: red;
+}
+footer .text-sm {
+    color: black;
+}
